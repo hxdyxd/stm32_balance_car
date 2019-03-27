@@ -1,12 +1,13 @@
-/*
- * hxdyxd@gmail.com, 2018
- */
+/**
+  * @author: hxdyxd@gmail.com
+  * @date: 2018 03 26
+  */
 
 #include "pwm_timer.h"
 
-/*
- * 4通道PWM输出
- */
+/**
+  * @brief  4通道PWM输出
+  */
 void pwm_4ch_timer_init(void)
 {
     GPIO_InitTypeDef          GPIO_InitStructure;
@@ -74,6 +75,11 @@ void pwm_4ch_timer_init(void)
     TIM_Cmd(TIM3, ENABLE);
 }
 
+
+/**
+  * @brief  配置PWM
+  * @retval None
+  */
 void pwm_timer_set(uint8_t id, uint16_t ccr)
 {
     static __IO uint16_t * const TIMx_CCRn[4] = {
@@ -82,7 +88,7 @@ void pwm_timer_set(uint8_t id, uint16_t ccr)
         &(TIM3->CCR3), 
         &(TIM3->CCR4),
     };
-    *TIMx_CCRn[id] = ccr;
+    *TIMx_CCRn[id] = (ccr >= PERIOD) ? (PERIOD-1) : ccr;
 }
 
 

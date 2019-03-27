@@ -20,6 +20,8 @@
 //pwm
 #include "pwm_timer.h"
 
+//i2c
+#include "i2c.h"
 
 
 /* some low level platform function */
@@ -37,6 +39,7 @@ void data_interface_hal_init(void)
     interface_usart_init();
     //pwm
     pwm_4ch_timer_init();
+    i2c_init();
 }
 
 

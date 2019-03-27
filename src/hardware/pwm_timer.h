@@ -1,4 +1,4 @@
-/*
+ï»¿/*
  * hxdyxd@gmail.com, 2018
  */
 
@@ -10,7 +10,7 @@
 #define PERIOD 7200
 
 /*
- * 4Í¨µÀPWMÊä³ö
+ * 4é€šé“PWMè¾“å‡º
  */
 void pwm_4ch_timer_init(void);
 

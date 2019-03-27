@@ -7,7 +7,7 @@
 
   <Targets>
     <Target>
-      <TargetName>project</TargetName>
+      <TargetName>stm32_balance_car</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
       <pCCUsed>5060750::V5.06 update 6 (build 750)::ARMCC</pCCUsed>
@@ -49,7 +49,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\obj\</OutputDirectory>
-          <OutputName>led</OutputName>
+          <OutputName>stm32_balance_car</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>1</CreateHexFile>
@@ -557,6 +557,16 @@
               <FileType>1</FileType>
               <FilePath>..\src\hardware\pwm_timer.c</FilePath>
             </File>
+            <File>
+              <FileName>i2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\hardware\i2c.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f10x_conf.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\hardware\stm32f10x_conf.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -581,6 +591,16 @@
               <FileName>soft_timer.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\src\app\soft_timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>control.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\app\control.c</FilePath>
+            </File>
+            <File>
+              <FileName>mpu6050.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\app\mpu6050.c</FilePath>
             </File>
           </Files>
         </Group>
