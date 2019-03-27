@@ -1,3 +1,7 @@
+/*
+ * hxdyxd@gmail.com, 2018
+ */
+
 #include "keys.h"
 
 #define  KEY_TIMEOUT   (50)

@@ -156,9 +156,6 @@ Section Cross References
     main.o(i.key_press_proc) refers to printf4.o(i.__0printf$4) for __2printf
     main.o(i.key_press_proc) refers to main.o(.constdata) for __FUNCTION__
     main.o(i.led_proc) refers to leds.o(i.led_rev) for led_rev
-    main.o(i.led_proc) refers to data_interface_hal.o(i.hal_read_TickCounter) for hal_read_TickCounter
-    main.o(i.led_proc) refers to printf4.o(i.__0printf$4) for __2printf
-    main.o(i.led_proc) refers to main.o(.constdata) for __FUNCTION__
     main.o(i.main) refers to data_interface_hal.o(i.data_interface_hal_init) for data_interface_hal_init
     main.o(i.main) refers to soft_timer.o(i.soft_timer_init) for soft_timer_init
     main.o(i.main) refers to soft_timer.o(i.soft_timer_create) for soft_timer_create
@@ -1076,19 +1073,18 @@ Image Symbol Table
     i.keys_init                              0x08001168   Section        0  keys.o(i.keys_init)
     i.keys_proc                              0x08001170   Section        0  keys.o(i.keys_proc)
     i.led_proc                               0x08001224   Section        0  main.o(i.led_proc)
-    i.led_rev                                0x08001288   Section        0  leds.o(i.led_rev)
-    i.leds_init                              0x080012d4   Section        0  leds.o(i.leds_init)
-    i.main                                   0x080012e0   Section        0  main.o(i.main)
-    i.pwm_4ch_timer_init                     0x08001370   Section        0  pwm_timer.o(i.pwm_4ch_timer_init)
-    i.soft_timer_create                      0x08001470   Section        0  soft_timer.o(i.soft_timer_create)
-    i.soft_timer_default                     0x080014d0   Section        0  soft_timer.o(i.soft_timer_default)
-    i.soft_timer_init                        0x080014d4   Section        0  soft_timer.o(i.soft_timer_init)
-    i.soft_timer_proc                        0x08001550   Section        0  soft_timer.o(i.soft_timer_proc)
-    i.systick_init                           0x080015d8   Section        0  systick.o(i.systick_init)
-    .constdata                               0x08001644   Section       29  main.o(.constdata)
-    __FUNCTION__                             0x08001644   Data           9  main.o(.constdata)
-    __FUNCTION__                             0x0800164d   Data          15  main.o(.constdata)
-    __FUNCTION__                             0x0800165c   Data           5  main.o(.constdata)
+    i.led_rev                                0x08001230   Section        0  leds.o(i.led_rev)
+    i.leds_init                              0x0800127c   Section        0  leds.o(i.leds_init)
+    i.main                                   0x08001288   Section        0  main.o(i.main)
+    i.pwm_4ch_timer_init                     0x08001318   Section        0  pwm_timer.o(i.pwm_4ch_timer_init)
+    i.soft_timer_create                      0x08001418   Section        0  soft_timer.o(i.soft_timer_create)
+    i.soft_timer_default                     0x08001478   Section        0  soft_timer.o(i.soft_timer_default)
+    i.soft_timer_init                        0x0800147c   Section        0  soft_timer.o(i.soft_timer_init)
+    i.soft_timer_proc                        0x080014f8   Section        0  soft_timer.o(i.soft_timer_proc)
+    i.systick_init                           0x08001580   Section        0  systick.o(i.systick_init)
+    .constdata                               0x080015ec   Section       20  main.o(.constdata)
+    __FUNCTION__                             0x080015ec   Data          15  main.o(.constdata)
+    __FUNCTION__                             0x080015fb   Data           5  main.o(.constdata)
     .data                                    0x20000000   Section       20  system_stm32f10x.o(.data)
     .data                                    0x20000014   Section       20  stm32f10x_rcc.o(.data)
     APBAHBPrescTable                         0x20000014   Data          16  stm32f10x_rcc.o(.data)
@@ -1276,18 +1272,18 @@ Image Symbol Table
     key_read                                 0x08001145   Thumb Code    32  keys.o(i.key_read)
     keys_init                                0x08001169   Thumb Code     8  keys.o(i.keys_init)
     keys_proc                                0x08001171   Thumb Code   158  keys.o(i.keys_proc)
-    led_proc                                 0x08001225   Thumb Code    40  main.o(i.led_proc)
-    led_rev                                  0x08001289   Thumb Code    70  leds.o(i.led_rev)
-    leds_init                                0x080012d5   Thumb Code    12  leds.o(i.leds_init)
-    main                                     0x080012e1   Thumb Code    70  main.o(i.main)
-    pwm_4ch_timer_init                       0x08001371   Thumb Code   244  pwm_timer.o(i.pwm_4ch_timer_init)
-    soft_timer_create                        0x08001471   Thumb Code    92  soft_timer.o(i.soft_timer_create)
-    soft_timer_default                       0x080014d1   Thumb Code     2  soft_timer.o(i.soft_timer_default)
-    soft_timer_init                          0x080014d5   Thumb Code   112  soft_timer.o(i.soft_timer_init)
-    soft_timer_proc                          0x08001551   Thumb Code   132  soft_timer.o(i.soft_timer_proc)
-    systick_init                             0x080015d9   Thumb Code    96  systick.o(i.systick_init)
-    Region$$Table$$Base                      0x08001664   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08001684   Number         0  anon$$obj.o(Region$$Table)
+    led_proc                                 0x08001225   Thumb Code    10  main.o(i.led_proc)
+    led_rev                                  0x08001231   Thumb Code    70  leds.o(i.led_rev)
+    leds_init                                0x0800127d   Thumb Code    12  leds.o(i.leds_init)
+    main                                     0x08001289   Thumb Code    70  main.o(i.main)
+    pwm_4ch_timer_init                       0x08001319   Thumb Code   244  pwm_timer.o(i.pwm_4ch_timer_init)
+    soft_timer_create                        0x08001419   Thumb Code    92  soft_timer.o(i.soft_timer_create)
+    soft_timer_default                       0x08001479   Thumb Code     2  soft_timer.o(i.soft_timer_default)
+    soft_timer_init                          0x0800147d   Thumb Code   112  soft_timer.o(i.soft_timer_init)
+    soft_timer_proc                          0x080014f9   Thumb Code   132  soft_timer.o(i.soft_timer_proc)
+    systick_init                             0x08001581   Thumb Code    96  systick.o(i.systick_init)
+    Region$$Table$$Base                      0x08001600   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08001620   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x20000000   Data           4  system_stm32f10x.o(.data)
     AHBPrescTable                            0x20000004   Data          16  system_stm32f10x.o(.data)
     USART_CFG                                0x20000028   Data          48  interface_usart.o(.data)
@@ -1305,9 +1301,9 @@ Memory Map of the image
 
   Image Entry point : 0x080000ed
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000172c, Max: 0x00010000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000016c8, Max: 0x00010000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00001684, Max: 0x00010000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00001620, Max: 0x00010000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -1393,36 +1389,36 @@ Memory Map of the image
     0x08001144   0x08001144   0x00000024   Code   RO         3265    i.key_read          keys.o
     0x08001168   0x08001168   0x00000008   Code   RO         3266    i.keys_init         keys.o
     0x08001170   0x08001170   0x000000b4   Code   RO         3267    i.keys_proc         keys.o
-    0x08001224   0x08001224   0x00000064   Code   RO         3390    i.led_proc          main.o
-    0x08001288   0x08001288   0x0000004c   Code   RO         3303    i.led_rev           leds.o
-    0x080012d4   0x080012d4   0x0000000c   Code   RO         3304    i.leds_init         leds.o
-    0x080012e0   0x080012e0   0x00000090   Code   RO         3391    i.main              main.o
-    0x08001370   0x08001370   0x00000100   Code   RO         3346    i.pwm_4ch_timer_init  pwm_timer.o
-    0x08001470   0x08001470   0x00000060   Code   RO         3420    i.soft_timer_create  soft_timer.o
-    0x080014d0   0x080014d0   0x00000002   Code   RO         3421    i.soft_timer_default  soft_timer.o
-    0x080014d2   0x080014d2   0x00000002   PAD
-    0x080014d4   0x080014d4   0x0000007c   Code   RO         3423    i.soft_timer_init   soft_timer.o
-    0x08001550   0x08001550   0x00000088   Code   RO         3424    i.soft_timer_proc   soft_timer.o
-    0x080015d8   0x080015d8   0x0000006c   Code   RO         3222    i.systick_init      systick.o
-    0x08001644   0x08001644   0x0000001d   Data   RO         3392    .constdata          main.o
-    0x08001661   0x08001661   0x00000003   PAD
-    0x08001664   0x08001664   0x00000020   Data   RO         3763    Region$$Table       anon$$obj.o
+    0x08001224   0x08001224   0x0000000a   Code   RO         3390    i.led_proc          main.o
+    0x0800122e   0x0800122e   0x00000002   PAD
+    0x08001230   0x08001230   0x0000004c   Code   RO         3303    i.led_rev           leds.o
+    0x0800127c   0x0800127c   0x0000000c   Code   RO         3304    i.leds_init         leds.o
+    0x08001288   0x08001288   0x00000090   Code   RO         3391    i.main              main.o
+    0x08001318   0x08001318   0x00000100   Code   RO         3346    i.pwm_4ch_timer_init  pwm_timer.o
+    0x08001418   0x08001418   0x00000060   Code   RO         3420    i.soft_timer_create  soft_timer.o
+    0x08001478   0x08001478   0x00000002   Code   RO         3421    i.soft_timer_default  soft_timer.o
+    0x0800147a   0x0800147a   0x00000002   PAD
+    0x0800147c   0x0800147c   0x0000007c   Code   RO         3423    i.soft_timer_init   soft_timer.o
+    0x080014f8   0x080014f8   0x00000088   Code   RO         3424    i.soft_timer_proc   soft_timer.o
+    0x08001580   0x08001580   0x0000006c   Code   RO         3222    i.systick_init      systick.o
+    0x080015ec   0x080015ec   0x00000014   Data   RO         3392    .constdata          main.o
+    0x08001600   0x08001600   0x00000020   Data   RO         3763    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08001684, Size: 0x00000598, Max: 0x00005000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08001620, Size: 0x00000598, Max: 0x00005000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08001684   0x00000014   Data   RW           14    .data               system_stm32f10x.o
-    0x20000014   0x08001698   0x00000014   Data   RW         1729    .data               stm32f10x_rcc.o
-    0x20000028   0x080016ac   0x00000030   Data   RW         3114    .data               interface_usart.o
-    0x20000058   0x080016dc   0x00000008   Data   RW         3223    .data               systick.o
-    0x20000060   0x080016e4   0x00000019   Data   RW         3268    .data               keys.o
-    0x20000079   0x080016fd   0x00000003   PAD
-    0x2000007c   0x08001700   0x00000024   Data   RW         3305    .data               leds.o
-    0x200000a0   0x08001724   0x00000001   Data   RW         3426    .data               soft_timer.o
-    0x200000a1   0x08001725   0x00000003   PAD
-    0x200000a4   0x08001728   0x00000004   Data   RW         3737    .data               mc_w.l(stdout.o)
+    0x20000000   0x08001620   0x00000014   Data   RW           14    .data               system_stm32f10x.o
+    0x20000014   0x08001634   0x00000014   Data   RW         1729    .data               stm32f10x_rcc.o
+    0x20000028   0x08001648   0x00000030   Data   RW         3114    .data               interface_usart.o
+    0x20000058   0x08001678   0x00000008   Data   RW         3223    .data               systick.o
+    0x20000060   0x08001680   0x00000019   Data   RW         3268    .data               keys.o
+    0x20000079   0x08001699   0x00000003   PAD
+    0x2000007c   0x0800169c   0x00000024   Data   RW         3305    .data               leds.o
+    0x200000a0   0x080016c0   0x00000001   Data   RW         3426    .data               soft_timer.o
+    0x200000a1   0x080016c1   0x00000003   PAD
+    0x200000a4   0x080016c4   0x00000004   Data   RW         3737    .data               mc_w.l(stdout.o)
     0x200000a8        -       0x000000f0   Zero   RW         3425    .bss                soft_timer.o
     0x20000198        -       0x00000400   Zero   RW            1    STACK               startup_stm32f10x_md.o
 
@@ -1438,7 +1434,7 @@ Image component sizes
        438         12          0         48          0       3981   interface_usart.o
        300         32          0         25          0       2774   keys.o
        220         16          0         36          0       2737   leds.o
-       356        198         29          0          0       2039   main.o
+       266        138         20          0          0       1987   main.o
        256         12          0          0          0        713   pwm_timer.o
        358         20          0          1        240       2645   soft_timer.o
         36          8        236          0       1024        852   startup_stm32f10x_md.o
@@ -1451,9 +1447,9 @@ Image component sizes
        132         16          0          8          0      16396   systick.o
 
     ----------------------------------------------------------------------
-      4626        506        300        164       1264     310338   Object Totals
+      4538        446        288        164       1264     310286   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        20          0          3          6          0          0   (incl. Padding)
+        22          0          0          6          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1495,15 +1491,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      5464        536        300        168       1264     307798   Grand Totals
-      5464        536        300        168       1264     307798   ELF Image Totals
-      5464        536        300        168          0          0   ROM Totals
+      5376        476        288        168       1264     307746   Grand Totals
+      5376        476        288        168       1264     307746   ELF Image Totals
+      5376        476        288        168          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 5764 (   5.63kB)
+    Total RO  Size (Code + RO Data)                 5664 (   5.53kB)
     Total RW  Size (RW Data + ZI Data)              1432 (   1.40kB)
-    Total ROM Size (Code + RO Data + RW Data)       5932 (   5.79kB)
+    Total ROM Size (Code + RO Data + RW Data)       5832 (   5.70kB)
 
 ==============================================================================
 

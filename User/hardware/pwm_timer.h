@@ -1,11 +1,13 @@
+/*
+ * hxdyxd@gmail.com, 2018
+ */
+
 #ifndef __PWM_TIMER_H
 #define __PWM_TIMER_H
 
 #include "stm32f10x.h"
 
 #define PERIOD 7200
-#define CCR1_V(p) (1200-p)
-#define CCR2_V(p) (2400-p)
 
 /*
  * 4Í¨µÀPWMÊä³ö

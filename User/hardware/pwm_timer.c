@@ -1,3 +1,7 @@
+/*
+ * hxdyxd@gmail.com, 2018
+ */
+
 #include "pwm_timer.h"
 
 /*

@@ -1,3 +1,7 @@
+/*
+ * hxdyxd@gmail.com, 2018
+ */
+
 #include "leds.h"
 
 #define LED_NUM     (3)

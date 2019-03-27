@@ -1,3 +1,7 @@
+/*
+ * hxdyxd@gmail.com, 2018
+ */
+
 #include "soft_timer.h"
 
 

@@ -1,3 +1,7 @@
+/*
+ * hxdyxd@gmail.com, 2018
+ */
+
 #include "flash.h"
 
 #define FLASH_PAGE_SIZE         ((uint32_t)FLASH_Page_Size)   /* FLASH Page Size */

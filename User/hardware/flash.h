@@ -1,3 +1,7 @@
+/*
+ * hxdyxd@gmail.com, 2018
+ */
+
 #ifndef __FLASH_H__
 #define __FLASH_H__
 

@@ -1,3 +1,7 @@
+/*
+ * hxdyxd@gmail.com, 2018
+ */
+
 #ifndef _SOFT_TIMER_H
 #define _SOFT_TIMER_H
 
