@@ -10,8 +10,9 @@
 
 void i2c_init(void);
 
-int i2c_write(uint8_t REG_Address, uint8_t REG_data);
-uint8_t i2c_read(uint8_t REG_Address);
+int i2c_write_byte(uint8_t REG_Address, uint8_t REG_data);
 
+int8_t i2c_write(uint8_t addr, uint8_t reg, uint8_t len, uint8_t * data);
+int8_t i2c_read(uint8_t addr, uint8_t reg, uint8_t len, uint8_t *buf);
 
 #endif

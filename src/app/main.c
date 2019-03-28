@@ -17,6 +17,11 @@
 void led_proc(void)
 {
     led_rev(LED_G);
+    if(Pitch > 20 || -Pitch > 20) {
+        led_off(LED_BELL);
+    } else {
+        led_on(LED_BELL);
+    }
 }
 
 
@@ -30,17 +35,19 @@ void key_press_proc(int8_t id)
 int main(void)
 {
     data_interface_hal_init();
+    PRINTF("\r\n\r\n Build , %s %s \r\n", __DATE__, __TIME__);
+    
     soft_timer_init();
     
-    
     soft_timer_create(SOFT_TIMER_LED, 1, 1, led_proc, 100);
-    soft_timer_create(SOFT_TIMER_MPU6050, 1, 1, mpu6050_get_acc_gyro_proc, 5);
-    soft_timer_create(SOFT_TIMER_MPU6050_SHOW, 1, 1, mpu6050_show, 200);
+    soft_timer_create(SOFT_TIMER_MPU6050, 1, 1, MPU6050_Pose, 5);
+    soft_timer_create(SOFT_TIMER_MPU6050_SHOW, 1, 1, MPU6050_Show, 200);
     soft_timer_create(SOFT_TIMER_CONTROL_ANGLE, 1, 1, control_angle_proc, 10);
     
-    mpu6050_config();
+    led_off(LED_BELL);
+    MPU6050_Init();
+    led_on(LED_BELL);
     
-    APP_DEBUG("Build , %s %s \r\n", __DATE__, __TIME__);
     APP_DEBUG("init success \r\n");
     motor_set(0, 0);
     

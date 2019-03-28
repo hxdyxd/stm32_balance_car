@@ -18,22 +18,22 @@
 
 #define PRINTF(...) printf(__VA_ARGS__);
 
-#define APP_ERROR(...) if(1) {\
+#define APP_ERROR(...) do {\
                     printf("\033[40;32m[%lld]\033[0m \033[2;40;33m%s(%d)\033[0m: ",\
                      TIME_COUNT(), __FUNCTION__, __LINE__);\
                     printf("\033[1;40;31mERROR\033[0m ");\
-                    printf(__VA_ARGS__);}
+                    printf(__VA_ARGS__);}while(0)
 
-#define APP_WARN(...) if(1) {\
+#define APP_WARN(...) do {\
                     printf("\033[40;32m[%lld]\033[0m \033[2;40;33m%s(%d)\033[0m: ",\
                     TIME_COUNT(), __FUNCTION__, __LINE__);\
                     printf("\033[1;40;33mWARN\033[0m ");\
-                    printf(__VA_ARGS__);}
+                    printf(__VA_ARGS__);}while(0)
 
-#define APP_DEBUG(...) if(1) {\
+#define APP_DEBUG(...) do {\
                     printf("\033[40;32m[%lld]\033[0m \033[2;40;33m%s(%d)\033[0m: ",\
                      TIME_COUNT(), __FUNCTION__, __LINE__);\
-                    printf(__VA_ARGS__);}
+                    printf(__VA_ARGS__);}while(0)
 
 
 
