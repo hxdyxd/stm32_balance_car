@@ -1,6 +1,6 @@
 /**
   * @author: hxdyxd@gmail.com
-  * @date: 2018 03 26
+  * @date: 2019 03 26
   */
 
 #include "pwm_timer.h"

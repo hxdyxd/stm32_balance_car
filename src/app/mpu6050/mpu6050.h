@@ -20,6 +20,4 @@ extern short gyro[3], accel[3];
 void MPU6050_Init(void);
 void MPU6050_Pose(void);
 
-void MPU6050_Show(void);
-
 #endif

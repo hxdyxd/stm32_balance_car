@@ -1,5 +1,5 @@
-﻿/*
- * hxdyxd@gmail.com, 2018
+/*
+ * hxdyxd@gmail.com, 2019
  */
 
 #ifndef __PWM_TIMER_H

@@ -14,6 +14,7 @@
 #include "keys.h"
 #include "pwm_timer.h"
 #include "i2c.h"
+#include "encoder_timer.h"
 
 //led id
 #define LED_G       (0)

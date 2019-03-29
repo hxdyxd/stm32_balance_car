@@ -567,6 +567,11 @@
               <FileType>5</FileType>
               <FilePath>..\src\hardware\stm32f10x_conf.h</FilePath>
             </File>
+            <File>
+              <FileName>encoder_timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\hardware\encoder_timer.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -576,26 +581,6 @@
               <FileName>data_interface_hal.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\src\hal\data_interface_hal.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>User</GroupName>
-          <Files>
-            <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\src\app\main.c</FilePath>
-            </File>
-            <File>
-              <FileName>soft_timer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\src\app\soft_timer.c</FilePath>
-            </File>
-            <File>
-              <FileName>control.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\src\app\control.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -616,6 +601,26 @@
               <FileName>inv_mpu_dmp_motion_driver.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\src\app\mpu6050\eMPL\inv_mpu_dmp_motion_driver.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>User</GroupName>
+          <Files>
+            <File>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\app\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>soft_timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\app\soft_timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>control.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\app\control.c</FilePath>
             </File>
           </Files>
         </Group>

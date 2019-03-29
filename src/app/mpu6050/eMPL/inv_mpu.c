@@ -48,6 +48,7 @@
 #define log_e    APP_ERROR
 #define log_i    APP_DEBUG
 
+#define labs        abs
 #define min(a,b) ((a<b)?a:b)
 
 #define get_ms    get_ms_mpu

@@ -112,8 +112,3 @@ void MPU6050_Pose(void)
         Yaw   = atan2(2*(q1*q2 + q0*q3),q0*q0+q1*q1-q2*q2-q3*q3) * 57.3;    //yaw
     }
 }
-
-void MPU6050_Show(void)
-{
-    APP_DEBUG("%.3f %.3f %.3f \r\n", Pitch, Roll, Yaw);
-}

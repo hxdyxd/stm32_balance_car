@@ -23,6 +23,9 @@
 //i2c
 #include "i2c.h"
 
+//encoder
+#include "encoder_timer.h"
+
 
 /* some low level platform function */
 /* public hal function */
@@ -40,6 +43,8 @@ void data_interface_hal_init(void)
     //pwm
     pwm_4ch_timer_init();
     i2c_init();
+    TIM2_Encoder_Init();
+    TIM4_Encoder_Init();
 }
 
 

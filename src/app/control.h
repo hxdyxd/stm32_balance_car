@@ -12,6 +12,19 @@
 
 void motor_set(int16_t left, int16_t right);
 
-void control_angle_proc(void);
+/**
+  * @brief  motor control
+  * @retval None
+  * @date   2019 03 27
+  */
+void control_motor_proc(void);
+
+/**
+  * @brief  motor speed control
+  * @retval None
+  * @date   2019 03 29
+  */
+void control_speed_set(float speed_set);
 
 #endif
+/******************* (C) COPYRIGHT 2019 hxdyxd *****END OF FILE****/
