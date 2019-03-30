@@ -16,6 +16,7 @@
 
 //uart
 #include "interface_usart.h"
+#include "usart_rx.h"
 
 //pwm
 #include "pwm_timer.h"
@@ -40,6 +41,7 @@ void data_interface_hal_init(void)
     keys_init();
     //uart
     interface_usart_init();
+    usart_rx_isr_init();
     //pwm
     pwm_4ch_timer_init();
     i2c_init();

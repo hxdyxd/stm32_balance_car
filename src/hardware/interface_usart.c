@@ -1,10 +1,10 @@
-﻿/* Uart 2018 06 27 END */
+/* Uart 2018 06 27 END */
 /* By hxdyxd */
 
 #include "interface_usart.h"
 #include <stdio.h>
 
-#define USART_NUM     (1)
+#define USART_NUM     (2)
 
 struct sGpio
 {
@@ -50,6 +50,26 @@ struct sUsartCfg USART_CFG[USART_NUM] = {
             .GPIO_Pin = GPIO_Pin_10,
         },
     },
+    
+    {
+        .tUsart = {
+            .RCC_APBPeriph = RCC_APB1Periph_USART3,
+            .USART_BaudRate = 115200,
+            .USARTx = USART3,
+            .DMAReq_Tx = DISABLE,
+            .DMAReq_Rx = DISABLE,
+        },
+        .tGpioTx = {
+            .RCC_APB2Periph = RCC_APB2Periph_GPIOB,
+            .GPIOx = GPIOB,
+            .GPIO_Pin = GPIO_Pin_10,
+        },
+        .tGpioRx = {
+            .RCC_APB2Periph = RCC_APB2Periph_GPIOB,
+            .GPIOx = GPIOB,
+            .GPIO_Pin = GPIO_Pin_11,
+        },
+    },
 };
 
 
@@ -70,6 +90,9 @@ void interface_usart_init(void)
             break;
         case RCC_APB1Periph_USART2:
             RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART2, ENABLE);
+            break;
+        case RCC_APB1Periph_USART3:
+            RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART3, ENABLE);
             break;
         default:
             while(1);

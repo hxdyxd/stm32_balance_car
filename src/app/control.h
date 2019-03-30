@@ -26,5 +26,12 @@ void control_motor_proc(void);
   */
 void control_speed_set(float speed_set);
 
+/**
+  * @brief  motor reset
+  * @retval None
+  * @date   2019 03 30
+  */
+void control_reset(void);
+
 #endif
 /******************* (C) COPYRIGHT 2019 hxdyxd *****END OF FILE****/

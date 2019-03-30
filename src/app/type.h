@@ -10,11 +10,15 @@
 
 /* configuration */
 
+#define BLUETOOTH_NAME "BalanceCar      " //16 Byte
+
+
 #define SOFT_TIMER_LED      0
 #define SOFT_TIMER_MPU6050  1
 #define SOFT_TIMER_MPU6050_SHOW  2
-#define SOFT_TIMER_CONTROL_ANGLE 3
+#define SOFT_TIMER_CONTROL_MOTOR 3
 #define SOFT_TIMER_SPEED_SET 4
+#define SOFT_TIMER_BLUETOOTH_INIT 5
 
 #endif
 /******************* (C) COPYRIGHT 2018 hxdyxd *****END OF FILE****/

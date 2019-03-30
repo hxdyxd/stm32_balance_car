@@ -16,7 +16,7 @@
 #define CAR_POSITION_MIN -2000
 
 static float gf_speed_set = 0;
-
+static float fCarPosition = 0;
 
 /**
   * @brief  配置电机
@@ -80,7 +80,6 @@ float get_speed_out(float set_speed)
     
     
     static float fCarSpeedOld = 0;
-    static float fCarPosition = 0;
     float fCarSpeed = (g_s32LeftMotorPulseSigma  + g_s32RightMotorPulseSigma) * 0.5;
     g_s32LeftMotorPulseSigma = g_s32RightMotorPulseSigma = 0;     //全局变量 注意及时清零
     
@@ -135,6 +134,16 @@ void control_motor_proc(void)
 void control_speed_set(float speed_set)
 {
     gf_speed_set = speed_set;
+}
+
+/**
+  * @brief  motor reset
+  * @retval None
+  * @date   2019 03 30
+  */
+void control_reset(void)
+{
+    fCarPosition = 0;
 }
 
 /******************* (C) COPYRIGHT 2019 hxdyxd *****END OF FILE****/
