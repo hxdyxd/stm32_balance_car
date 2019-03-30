@@ -127,8 +127,8 @@ void interface_usart_init(void)
 
 void interface_usart_putchar( int id, unsigned char ch)
 {
-    USART_SendData( USART_CFG[id].tUsart.USARTx , ch);
     while(USART_GetFlagStatus( USART_CFG[id].tUsart.USARTx , USART_FLAG_TC) != SET);   //传输完成标志
+    USART_SendData( USART_CFG[id].tUsart.USARTx , ch);
 }
 
 void interface_usart_write(const unsigned char *p, int len)

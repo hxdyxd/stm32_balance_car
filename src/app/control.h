@@ -8,7 +8,17 @@
 
 #include <stdint.h>
 
+/********** pid parameter start ************/
+extern float gf_dir_kp;
 
+/* PD algorithm, angle */
+extern float gf_ang_kp;
+extern float gf_ang_kd;
+
+/* PI algorithm, speed */
+extern float gf_spd_kp;
+extern float gf_spd_ki;
+/************ pid parameter end ************/
 
 void motor_set(int16_t left, int16_t right);
 
@@ -25,6 +35,13 @@ void control_motor_proc(void);
   * @date   2019 03 29
   */
 void control_speed_set(float speed_set);
+
+/**
+  * @brief  motor direction control
+  * @retval None
+  * @date   2019 03 29
+  */
+void control_direction_set(float dir_set);
 
 /**
   * @brief  motor reset

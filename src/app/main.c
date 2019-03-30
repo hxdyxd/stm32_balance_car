@@ -16,6 +16,17 @@
 
 uint8_t g_led_red_flag = 0;
 
+
+#define BLUETOOTH_S_NOT_INIT   (0)
+#define BLUETOOTH_S_NAME       (1)
+#define BLUETOOTH_S_WAIT_CONN  (2)
+#define BLUETOOTH_S_CONNECTED  (3)
+
+#define BLUETOOTH_S_PIN        (4)
+
+static uint8_t bluetooth_init_state = BLUETOOTH_S_NOT_INIT;
+char bluetooth_buf[255];
+
 void led_proc(void)
 {
     led_rev(LED_G);
@@ -57,25 +68,6 @@ void sensors_show_proc(void)
     APP_DEBUG("encoder: %d %d \r\n", g_s32LeftMotorPulseSigma, g_s32RightMotorPulseSigma);
 }
 
-
-void speed_proc(void)
-{
-    static float speed = 30;
-    control_speed_set(speed);
-    speed = -speed;
-}
-
-
-#define BLUETOOTH_S_NOT_INIT   (0)
-#define BLUETOOTH_S_NAME       (1)
-#define BLUETOOTH_S_WAIT_CONN  (2)
-#define BLUETOOTH_S_CONNECTED  (3)
-
-#define BLUETOOTH_S_PIN        (4)
-
-
-static uint8_t bluetooth_init_state = BLUETOOTH_S_NOT_INIT;
-char bluetooth_buf[255];
 
 
 void bluetooth_init_proc(void)
@@ -119,21 +111,27 @@ void bluetooth_init_proc(void)
 void uart_receive_proc(uint8_t *buf, uint8_t len)
 {
     APP_DEBUG("%.*s (%d)\r\n", len, (char *)buf, len);
-    switch(buf[0]) {
+    int str_len = 0;
+    char cmd = '0';
+    int value = 0;
+    
+    buf[len] = '\0';
+    int ret_num = sscanf( (char *)buf, "%c %d", &cmd, &value);
+    if(ret_num < 1) {
+        return;
+    }
+    
+    switch(cmd) {
         case 'w':
-            //前
-            control_speed_set(40);
+            //forward
+            control_speed_set(value);
             break;
-        case 's':
-            //后
-            control_speed_set(-55);
-            break;
-        case 't':
-            //停
-            control_speed_set(0);
+        case 'a':
+            //left
+            control_direction_set(value);
             break;
         case 'o':
-            //开启电机控制
+            //turn on motor control
             control_reset();
             soft_timer_create(SOFT_TIMER_CONTROL_MOTOR, 1, 1, control_motor_proc, 5);
             g_led_red_flag = 0;
@@ -141,11 +139,25 @@ void uart_receive_proc(uint8_t *buf, uint8_t len)
             led_on(LED_BELL);
             break;
         case 'f':
-            //关闭电机
+            //turn off motor
             motor_set(0, 0);
-            //关闭电机控制
+            //turn off motor control
             soft_timer_delete(SOFT_TIMER_CONTROL_MOTOR);
             g_led_red_flag = 1;
+            break;
+        case 'p':
+            //show pid value
+            str_len = sprintf(bluetooth_buf, "pid: %.3f, %.3f %.3f, %.3f %.3f \r\n", gf_dir_kp, gf_ang_kp, gf_ang_kd, gf_spd_kp, gf_spd_ki);
+            interface_usart_write( (uint8_t *)bluetooth_buf, str_len);
+            break;
+        case 'm':
+            //show sensors info
+            str_len = sprintf(bluetooth_buf, "accel: %d %d %d \r\n", accel[0], accel[1], accel[2]);
+            interface_usart_write( (uint8_t *)bluetooth_buf, str_len);
+            str_len = sprintf(bluetooth_buf, "gyro: %d %d %d \r\n", gyro[0], gyro[1], gyro[2]);
+            interface_usart_write( (uint8_t *)bluetooth_buf, str_len);
+            str_len = sprintf(bluetooth_buf, "direction: %.3f %.3f %.3f \r\n", Pitch, Roll, Yaw);
+            interface_usart_write( (uint8_t *)bluetooth_buf, str_len);
             break;
         default:
             ;
@@ -162,9 +174,9 @@ int main(void)
     
     soft_timer_create(SOFT_TIMER_LED, 1, 1, led_proc, 100);
     soft_timer_create(SOFT_TIMER_MPU6050, 1, 1, sensors_proc, 5);
-//    soft_timer_create(SOFT_TIMER_MPU6050_SHOW, 1, 1, sensors_show_proc, 200);
-    soft_timer_create(SOFT_TIMER_CONTROL_MOTOR, 1, 1, control_motor_proc, 5);
-//    soft_timer_create(SOFT_TIMER_SPEED_SET, 1, 1, speed_proc, 3000);
+    soft_timer_create(SOFT_TIMER_MPU6050_SHOW, 1, 1, sensors_show_proc, 200);
+    
+//    soft_timer_create(SOFT_TIMER_CONTROL_MOTOR, 1, 1, control_motor_proc, 5);
     
     soft_timer_create(SOFT_TIMER_BLUETOOTH_INIT, 1, 0, bluetooth_init_proc, 100);
     
