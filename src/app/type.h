@@ -10,7 +10,7 @@
 
 /* configuration */
 
-#define BLUETOOTH_NAME "BalanceCar      " //16 Byte
+#define BLUETOOTH_NAME "BalanceCar123456" //16 Byte
 
 
 #define SOFT_TIMER_LED      0

@@ -27,6 +27,7 @@ uint8_t g_led_red_flag = 0;
 static uint8_t bluetooth_init_state = BLUETOOTH_S_NOT_INIT;
 char bluetooth_buf[255];
 
+
 void led_proc(void)
 {
     led_rev(LED_G);
@@ -42,7 +43,6 @@ void led_proc(void)
         led_off(LED_R);
     }
 }
-
 
 void key_press_proc(int8_t id)
 {
@@ -98,6 +98,10 @@ void bluetooth_init_proc(void)
         break;
     
     case BLUETOOTH_S_WAIT_CONN:
+        str_len = sprintf(bluetooth_buf, "AT+NAME\r\n");
+        interface_usart_write( (uint8_t *)bluetooth_buf, str_len);
+        APP_DEBUG("%s", bluetooth_buf);
+    
         APP_DEBUG("wait connect\r\n");
         soft_timer_delete(SOFT_TIMER_BLUETOOTH_INIT);
         bluetooth_init_state = BLUETOOTH_S_NOT_INIT;
@@ -174,7 +178,7 @@ int main(void)
     
     soft_timer_create(SOFT_TIMER_LED, 1, 1, led_proc, 100);
     soft_timer_create(SOFT_TIMER_MPU6050, 1, 1, sensors_proc, 5);
-    soft_timer_create(SOFT_TIMER_MPU6050_SHOW, 1, 1, sensors_show_proc, 200);
+    soft_timer_create(SOFT_TIMER_MPU6050_SHOW, 1, 1, sensors_show_proc, 1000);
     
 //    soft_timer_create(SOFT_TIMER_CONTROL_MOTOR, 1, 1, control_motor_proc, 5);
     
